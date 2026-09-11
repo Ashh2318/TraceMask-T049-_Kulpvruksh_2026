@@ -1,0 +1,30 @@
+{
+  "name": "tracemask",
+  "version": "1.2.0",
+  "description": "TraceMask: an identity firewall for online sign-ups. A different email alias for every website, live site-risk scans, and proof of who leaked your address. Web app + Chrome extension, zero dependencies.",
+  "keywords": [
+    "privacy",
+    "email-alias",
+    "identity",
+    "data-leak",
+    "phishing",
+    "dpdp",
+    "gdpr",
+    "imap",
+    "chrome-extension",
+    "cybersecurity"
+  ],
+  "author": "Team Cryptic_Vruksh",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning server/index.js",
+    "check": "node --no-warnings=ExperimentalWarning server/self-check.js",
+    "security": "node tests/security-probe.mjs",
+    "test": "node --no-warnings=ExperimentalWarning tests/ci.mjs"
+  }
+}

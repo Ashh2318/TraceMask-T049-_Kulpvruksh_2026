@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TraceMask</title>
+  <link rel="stylesheet" href="popup.css">
+  <script type="module" src="popup.js"></script>
+</head>
+<body>
+  <header class="hd">
+    <div class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8c3-2 15-2 18 0 0 6-3 9-6 9-1.5 0-2-2-3-2s-1.5 2-3 2c-3 0-6-3-6-9z"/><circle cx="8.5" cy="10.5" r="1.1" fill="#fff"/><circle cx="15.5" cy="10.5" r="1.1" fill="#fff"/></svg></div>
+    <div><b>TraceMask</b><small id="sub">Identity firewall</small></div>
+    <span id="state" class="pill">…</span>
+  </header>
+  <main id="main"><div class="loading"><span class="spin"></span> Connecting to TraceMask…</div></main>
+  <footer class="ft">
+    <button class="link" id="open-app">Open TraceMask</button>
+    <button class="link" id="open-opts">Settings</button>
+  </footer>
+</body>
+</html>

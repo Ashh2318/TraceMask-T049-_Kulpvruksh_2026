@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TraceMask for Chrome: Settings</title>
+  <link rel="icon" href="../icons/icon-32.png">
+  <link rel="stylesheet" href="options.css">
+  <script type="module" src="options.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-in">
+      <img src="../icons/icon-48.png" alt="" class="logo">
+      <div>
+        <h1>TraceMask for Chrome</h1>
+        <p>A different you for every website. Works with the TraceMask app on this computer.</p>
+      </div>
+      <span id="ver" class="ver"></span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card" id="conn-card" aria-live="polite">
+      <div class="card-hd">
+        <h2>Connection</h2>
+        <span id="state" class="pill">Checking…</span>
+      </div>
+      <dl class="rows" id="rows"></dl>
+      <div class="msg" id="conn-msg" hidden></div>
+      <div class="actions">
+        <button class="btn sec" id="test">Test connection</button>
+        <button class="btn sec" id="open-app">Open TraceMask</button>
+        <button class="btn danger" id="unpair" hidden>Unpair this browser</button>
+      </div>
+    </section>
+
+    <section class="card" id="pair-card" hidden>
+      <div class="card-hd"><h2>Pair this browser</h2></div>
+      <ol class="steps">
+        <li>Start the TraceMask app on this computer (<b>start.bat</b>) and unlock it.</li>
+        <li>In TraceMask, open <b>Settings → Browser extension</b> and click <b>Generate pairing code</b>.</li>
+        <li>Type the 8-character code here. It works once and expires after 5 minutes.</li>
+      </ol>
+      <form id="pair-form" autocomplete="off">
+        <label class="field">
+          <span>Pairing code</span>
+          <input id="code" class="inp code" placeholder="ABCD-2345" maxlength="9" spellcheck="false" required>
+        </label>
+        <details class="adv">
+          <summary>Advanced: TraceMask address</summary>
+          <label class="field">
+            <span>Address of your TraceMask app (localhost only)</span>
+            <input id="server" class="inp" spellcheck="false" value="http://localhost:4390">
+          </label>
+        </details>
+        <div class="msg err" id="pair-msg" hidden></div>
+        <button class="btn" id="pair-btn" type="submit">Pair with TraceMask</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="card-hd"><h2>Preferences</h2></div>
+      <label class="toggle">
+        <input type="checkbox" id="opt-inline">
+        <span class="sw" aria-hidden="true"></span>
+        <span><b>Show the TraceMask button inside email fields</b><small>A small mask button appears in sign-up email boxes. Click it to check the site and fill an alias.</small></span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="opt-notify">
+        <span class="sw" aria-hidden="true"></span>
+        <span><b>Notify me when a site leaks my alias</b><small>A desktop notification appears when TraceMask catches a new leak (checked every minute).</small></span>
+      </label>
+      <div class="shortcut">
+        <span>Keyboard shortcut to fill your alias:</span>
+        <kbd id="shortcut">Alt+Shift+E</kbd>
+        <button class="link" id="shortcuts">Change</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-hd"><h2>How to use it</h2></div>
+      <div class="how">
+        <div><span class="num">1</span><b>Click an email field</b><p>On any sign-up page, click the mask button that appears in the email box.</p></div>
+        <div><span class="num">2</span><b>Pick the purpose</b><p>One-time, regular, recoverable or bank/KYC. TraceMask recommends the right trust tier from the live risk score.</p></div>
+        <div><span class="num">3</span><b>Create &amp; fill</b><p>A unique alias is created for that site only and filled into the form. If it ever arrives from anyone else, that is a leak.</p></div>
+      </div>
+      <p class="muted">Other ways: right-click an input → <b>Fill TraceMask alias for this site</b>, or click the TraceMask toolbar icon to see the site's risk, your alias and open leaks.</p>
+    </section>
+
+    <section class="card">
+      <div class="card-hd"><h2>Privacy</h2></div>
+      <ul class="priv">
+        <li>The extension talks <b>only to the TraceMask app on this computer</b> (localhost). No cloud server, no analytics.</li>
+        <li>It sends the <b>address of the page you act on</b>, and only when you click. Page content, passwords and form data are never read or sent.</li>
+        <li>Access uses a per-browser key that is stored hashed in TraceMask. You can revoke it any time from either side.</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="wrap foot">TraceMask · Team Cryptic_Vruksh (T049) · Kalpvruksh 2.0</footer>
+</body>
+</html>
